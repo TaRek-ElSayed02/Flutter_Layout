@@ -20,15 +20,37 @@ class Chats extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      physics: const NeverScrollableScrollPhysics(), // Disable independent scrolling
-      shrinkWrap: true, // Ensure it takes only the space it needs
+      physics: const NeverScrollableScrollPhysics(),
+      shrinkWrap: true,
       itemCount: chatsList.length,
       itemBuilder: (context, index) {
         return ListTile(
-          leading: const CircleAvatar(
-            radius: 25,
-            backgroundImage: NetworkImage(
-                "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_640.png"),
+          leading: Stack(
+            alignment: Alignment.bottomRight,
+            children: [
+              const CircleAvatar(
+                radius: 25,
+                backgroundImage: NetworkImage(
+                    "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_640.png"),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(bottom: 2, right: 1),
+                child: Container(
+                  width: 15,
+                  height: 15,
+                  decoration: const BoxDecoration(
+                    color: Colors.green,
+                    shape: BoxShape.circle,
+                    border: Border.fromBorderSide(
+                      BorderSide(
+                        color: Colors.white,
+                        width: 2,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ],
           ),
           title: Text(
             chatsList[index]["name"]!,

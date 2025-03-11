@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'chats.dart'; // Assuming this is where your Chats widget is defined
-import 'user_avatar.dart'; // Assuming this is where UserAvatar is defined
+import 'chats.dart';
+import 'user_avatar.dart';
 
 class MessengerScreen extends StatelessWidget {
   const MessengerScreen({super.key});
@@ -73,7 +73,7 @@ class MessengerScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 15),
-              // Active Users List (Stories)
+
               SizedBox(
                 height: 120,
                 child: ListView.builder(
