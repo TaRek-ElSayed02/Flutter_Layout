@@ -92,7 +92,7 @@ class MessengerScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 15),
-              // Chats List (without Expanded, since it's now part of the SingleChildScrollView)
+              
               Chats(),
             ],
           ),
